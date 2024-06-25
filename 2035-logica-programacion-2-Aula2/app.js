@@ -13,8 +13,15 @@ function verificarIntento() {
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
     
     if (numeroDeUsuario === numeroSecreto) {
-        console.log('Acertaste el número!');
-    } 
+        asignarTextoElemento('p',`Acertaste el número! en ${intentos} ${(intentos === 1) ? 'vez' : 'veces'} `);
+    } else {
+        if (numeroDeUsuario > numeroSecreto) {
+            asignarTextoElemento('p','El número secreto es menor!');
+        } else {
+            asignarTextoElemento('p','El número secreto es mayor');
+        }
+        intentos++;
+    }
     return;
 }
 
@@ -24,5 +31,5 @@ function generarNumeroSecreto() {
 
 }
 
-asignarTextoElemento('h1','Juego del número secreto!');
+asignarTextoElemento('h1','Hora del Desafío!');
 asignarTextoElemento('p',`Indica un número del 1 al 10`);
