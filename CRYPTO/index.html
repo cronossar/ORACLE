@@ -9,19 +9,20 @@
 <body>
     <div class="container">
         <div class="input-container">
-            <textarea id="inputText" placeholder="Introduce tu texto aquí..."></textarea>
+            <textarea class="inputText" id="inputText" placeholder="Introduce tu texto aquí..."></textarea>
         </div>
 
         <div class="output-container">
-            <textarea id="outputText" readonly placeholder="Texto encriptado/desencriptado aparecerá aquí..."></textarea>
-            <button id="copyBtn">Copiar</button>
+            <textarea class="outputText" id="outputText" readonly placeholder="Texto encriptado/desencriptado aparecerá aquí..."></textarea>
+            <button class="copyBtn" id="copyBtn">Copiar</button>
         </div>
-        
-        <div class="button-container">
-            <button id="encryptBtn">Encriptar</button>
-            <button id="decryptBtn">Desencriptar</button>
-        </div>
+    </div>    
+
+    <div class="button-container">
+            <button class="encryptBtn" id="encryptBtn">Encriptar</button>
+            <button class="decryptBtn" id="decryptBtn">Desencriptar</button>
     </div>
+    
 
     <script src="script.js"></script>
 </body>
