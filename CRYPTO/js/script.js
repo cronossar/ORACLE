@@ -1,4 +1,5 @@
 document.getElementById('encryptBtn').addEventListener('click', function() {
+    copyBtn.style.display = 'block'; // Muestra el segundo botón
     let inputText = document.getElementById('inputText').value;
     let encryptedText = btoa(inputText); // Encriptación básica usando Base64
     document.getElementById('outputText').value = encryptedText;
@@ -20,7 +21,7 @@ document.getElementById('copyBtn').addEventListener('click', function() {
     let outputText = document.getElementById('outputText');
     outputText.select();
     document.execCommand('copy');
-    alert('Copié tu texto encriptado. Ahora pegalo en el cuadro de arriba para desencriptar');
+    alert('Copié tu texto encriptado. Ahora pegalo en el otro cuadro para desencriptar');
     // Borrar el texto después de copiar
     outputText.value = '';
 });

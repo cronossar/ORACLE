@@ -60,15 +60,27 @@ body {
     
 }
 
-.outputText {
+..output-container outputText {
     display: flex;
     width: 280px;
     height: 300px;
-    margin-bottom: 180px;
+    margin-bottom: 80px;
     border: none;
     user-select: unset;
+    align-items: center;
+    justify-content: space-around;
     
     
+}
+
+.output-container lupita {
+    display: flex;
+    margin-bottom: 50px ;
+}
+
+#copyBtn {
+    display: none;
+    margin-bottom: 10px;
 }
 
 button {
