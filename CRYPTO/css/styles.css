@@ -60,27 +60,24 @@ body {
     
 }
 
-..output-container outputText {
+.outputText {
     display: flex;
-    width: 280px;
-    height: 300px;
-    margin-bottom: 80px;
+    justify-content: center;
+    max-width: 230px;
+    min-height: 100px;
     border: none;
-    user-select: unset;
-    align-items: center;
-    justify-content: space-around;
-    
-    
+    margin-bottom: 40px; 
+    user-select: none;      
 }
 
-.output-container lupita {
-    display: flex;
-    margin-bottom: 50px ;
-}
+.lupita {
+   display: flex;
+   width: 60%;
+   margin-bottom: 60px;  
+} 
 
-#copyBtn {
-    display: none;
-    margin-bottom: 10px;
+.copyBtn {
+   display: none;
 }
 
 button {

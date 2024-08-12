@@ -1,5 +1,6 @@
 document.getElementById('encryptBtn').addEventListener('click', function() {
     copyBtn.style.display = 'block'; // Muestra el segundo botón
+    lupita.style.display = 'none'; // Oculta lupita
     let inputText = document.getElementById('inputText').value;
     let encryptedText = btoa(inputText); // Encriptación básica usando Base64
     document.getElementById('outputText').value = encryptedText;
