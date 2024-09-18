@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JAVA/2032-java-aplicando-la-orientacion-a-objetos-aula-01/2032-java-aplicando-la-orientacion-a-objetos-aula-01.iml" filepath="$PROJECT_DIR$/JAVA/2032-java-aplicando-la-orientacion-a-objetos-aula-01/2032-java-aplicando-la-orientacion-a-objetos-aula-01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/BACKEND.iml" filepath="$PROJECT_DIR$/.idea/BACKEND.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JAVA/PrimeraClase/PrimeraClase.iml" filepath="$PROJECT_DIR$/JAVA/PrimeraClase/PrimeraClase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JAVA/creando-tu-primera-aplicacion-aula-4-desafioFinal/creando-tu-primera-aplicacion-aula-4-desafioFinal.iml" filepath="$PROJECT_DIR$/JAVA/creando-tu-primera-aplicacion-aula-4-desafioFinal/creando-tu-primera-aplicacion-aula-4-desafioFinal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JAVA/desafiobancario/desafiobancario.iml" filepath="$PROJECT_DIR$/JAVA/desafiobancario/desafiobancario.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JAVA/primerprograma/primerprograma.iml" filepath="$PROJECT_DIR$/JAVA/primerprograma/primerprograma.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JAVA/screenmatch/screenmatch.iml" filepath="$PROJECT_DIR$/JAVA/screenmatch/screenmatch.iml" />
+    </modules>
+  </component>
+</project>
