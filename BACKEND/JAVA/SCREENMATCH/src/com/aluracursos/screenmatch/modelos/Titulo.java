@@ -12,44 +12,32 @@ public class Titulo {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public int getFechaDeLanzamiento() {
         return fechaDeLanzamiento;
-    }
-
-    public void setFechaDeLanzamiento(int fechaDeLanzamiento) {
-        this.fechaDeLanzamiento = fechaDeLanzamiento;
     }
 
     public int getDuracionEnMinutos() {
         return duracionEnMinutos;
     }
 
-    public void setDuracionEnMinutos(int duracionEnMinutos) {
-        this.duracionEnMinutos = duracionEnMinutos;
-    }
-
     public boolean isIncluidoEnElPlan() {
         return incluidoEnElPlan;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setFechaDeLanzamiento(int fechaDeLanzamiento) {
+        this.fechaDeLanzamiento = fechaDeLanzamiento;
+    }
+
+    public void setDuracionEnMinutos(int duracionEnMinutos) {
+        this.duracionEnMinutos = duracionEnMinutos;
+    }
+
     public void setIncluidoEnElPlan(boolean incluidoEnElPlan) {
         this.incluidoEnElPlan = incluidoEnElPlan;
-    }
-
-    public double getSumaDeLasEvaluaciones() {
-        return sumaDeLasEvaluaciones;
-    }
-
-    public void setSumaDeLasEvaluaciones(double sumaDeLasEvaluaciones) {
-        this.sumaDeLasEvaluaciones = sumaDeLasEvaluaciones;
-    }
-
-    public void setTotalDelasEvaluaciones(int totalDelasEvaluaciones) {
-        this.totalDelasEvaluaciones = totalDelasEvaluaciones;
     }
 
     public int getTotalDelasEvaluaciones(){
