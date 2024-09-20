@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="container__txtoriginal">
+        <label for="texto" class="container__subtitulo">Texto a encriptar:</label>
+        <input type="text" id="texto" placeholder="Ingresa tu texto aquí">
+        <button onclick="encriptar()">Encriptar</button>
+        </div>
+        <div class="txtcrypto">
+        <label for="resultado" class="container__subtitulo">Texto encriptado:</label>
+        <input type="text" id="resultado" readonly>
+        </div>
+    </div>
+
+    <script src="./js/crypto.js"></script>
+</body>
+</html>
