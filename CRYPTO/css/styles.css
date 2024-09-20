@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container {
+    width: 944px;
+    height: 150x;
+    margin: 20px auto;
+    background-color: #e9f0f7;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+}
+
+/* Estilos para los textareas y botones */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+    
+}
+
+.inputText {
+    height: 300px;
+}
+
+.output-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 288px;
+    height: 500px;
+    background-color: white;
+    border-radius: 20px;
+    
+}
+
+..output-container outputText {
+    display: flex;
+    width: 280px;
+    height: 300px;
+    margin-bottom: 80px;
+    border: none;
+    user-select: unset;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+    
+}
+
+.output-container lupita {
+    display: flex;
+    margin-bottom: 50px ;
+}
+
+#copyBtn {
+    display: none;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 270px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos específicos para tamaños de pantalla pequeños */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
