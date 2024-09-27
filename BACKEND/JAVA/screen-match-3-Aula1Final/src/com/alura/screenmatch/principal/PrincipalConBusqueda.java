@@ -1,56 +1,44 @@
 package com.alura.screenmatch.principal;
 
+import com.alura.screenmatch.excepcion.ErrorEnConversionDeDuracionException;
 import com.alura.screenmatch.modelos.Titulo;
 import com.alura.screenmatch.modelos.TituloOmdb;
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.alura.screenmatch.servicio.ApiService;
+import com.alura.screenmatch.utils.JsonUtil;
 
+import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-
 public class PrincipalConBusqueda {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException {
         Scanner lectura = new Scanner(System.in);
-        System.out.println("Escriba el nombre de una pelicula a buscar: ");
-        var busqueda = lectura.nextLine();
+        List<Titulo> titulos = new ArrayList<>();
+        ApiService apiService = new ApiService();
+        JsonUtil jsonUtil = new JsonUtil();
 
-        String direccion = "http://www.omdbapi.com/?t="+
-                busqueda.replace(" ", "+")
-                +"&apikey=fa0fa535";
+        while (true) {
+            System.out.println("Escriba el nombre de una pelicula o -salir-, para terminar: ");
+            String busqueda = lectura.nextLine();
 
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(direccion))
-                .build();
+            if (busqueda.equalsIgnoreCase("salir")) {
+                break;
+            }
 
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
-
-        String json = response.body();
-        System.out.println(json);
-        System.out.println("xxxxxxxxxxxxx");
-        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy
-                .UPPER_CAMEL_CASE).create();
-
-        TituloOmdb miTituloOmdb = gson.fromJson(json, TituloOmdb.class);
-
-        System.out.println(miTituloOmdb);
-        System.out.println("xxxxxxxxxxxxx");
-        try {
-            Titulo miTitulo = new Titulo(miTituloOmdb);
-            System.out.println("Título ya convertido: " + miTituloOmdb);
-        } catch (NumberFormatException e){
-            System.out.println("Ocurrio un error: ");
-            System.out.println(e.getMessage());
+            try {
+                Titulo miTitulo = apiService.buscarTitulo(busqueda);
+                if (miTitulo != null) {
+                    titulos.add(miTitulo);
+                    System.out.println("Título ya convertido: " + miTitulo);
+                }
+            } catch (ErrorEnConversionDeDuracionException e) {
+                System.out.println(e.getMessage());
+            }
         }
 
-        System.out.println("Finalizo la ejecución del programa!");
-
+        jsonUtil.escribirJson(titulos, "titulos.json");
+        System.out.println("Finalizó la ejecución del programa!");
     }
 }

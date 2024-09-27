@@ -1,0 +1,34 @@
+[
+  {
+    "nombre": "Encanto",
+    "fechaDeLanzamiento": 2021,
+    "incluidoEnElPlan": false,
+    "sumaDeLasEvaluaciones": 0.0,
+    "totalDeEvaluaciones": 0,
+    "duracionEnMinutos": 102
+  },
+  {
+    "nombre": "Matrix",
+    "fechaDeLanzamiento": 1993,
+    "incluidoEnElPlan": false,
+    "sumaDeLasEvaluaciones": 0.0,
+    "totalDeEvaluaciones": 0,
+    "duracionEnMinutos": 60
+  },
+  {
+    "nombre": "Top Gun",
+    "fechaDeLanzamiento": 1986,
+    "incluidoEnElPlan": false,
+    "sumaDeLasEvaluaciones": 0.0,
+    "totalDeEvaluaciones": 0,
+    "duracionEnMinutos": 109
+  },
+  {
+    "nombre": "Godzilla",
+    "fechaDeLanzamiento": 2014,
+    "incluidoEnElPlan": false,
+    "sumaDeLasEvaluaciones": 0.0,
+    "totalDeEvaluaciones": 0,
+    "duracionEnMinutos": 123
+  }
+]
