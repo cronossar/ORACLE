@@ -1,5 +1,13 @@
 [
   {
+    "nombre": "Godzilla",
+    "fechaDeLanzamiento": 2014,
+    "incluidoEnElPlan": false,
+    "sumaDeLasEvaluaciones": 0.0,
+    "totalDeEvaluaciones": 0,
+    "duracionEnMinutos": 123
+  },
+  {
     "nombre": "Encanto",
     "fechaDeLanzamiento": 2021,
     "incluidoEnElPlan": false,
@@ -16,19 +24,11 @@
     "duracionEnMinutos": 60
   },
   {
-    "nombre": "Top Gun",
-    "fechaDeLanzamiento": 1986,
+    "nombre": "La momia nacional",
+    "fechaDeLanzamiento": 1981,
     "incluidoEnElPlan": false,
     "sumaDeLasEvaluaciones": 0.0,
     "totalDeEvaluaciones": 0,
-    "duracionEnMinutos": 109
-  },
-  {
-    "nombre": "Godzilla",
-    "fechaDeLanzamiento": 2014,
-    "incluidoEnElPlan": false,
-    "sumaDeLasEvaluaciones": 0.0,
-    "totalDeEvaluaciones": 0,
-    "duracionEnMinutos": 123
+    "duracionEnMinutos": 85
   }
 ]
