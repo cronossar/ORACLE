@@ -33,6 +33,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+			<version>3.9.9</version>
 		</dependency>
 
 		<dependency>
