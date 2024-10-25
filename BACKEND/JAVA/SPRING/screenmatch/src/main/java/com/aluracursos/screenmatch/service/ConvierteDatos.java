@@ -1,5 +1,6 @@
 package com.aluracursos.screenmatch.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.json.JsonParseException;
 
@@ -12,7 +13,11 @@ public class ConvierteDatos implements IConvierteDatos {
     public <T> T obtenerDatos(String json, Class<T> clase) {
 
         try {
-            return objectMapper.readValue(json,clase);
+            try {
+                return objectMapper.readValue(json,clase);
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
         } catch (JsonParseException e) {
             throw new RuntimeException(e);
         }
