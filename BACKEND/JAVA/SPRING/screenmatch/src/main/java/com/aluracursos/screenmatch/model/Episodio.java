@@ -6,7 +6,6 @@ import java.time.format.DateTimeParseException;
 public class Episodio {
 
     private Integer temporada;
-    //private Integer numero;
     private String titulo;
     private Integer numeroEpisodio;
     private Double evaluacion;
@@ -31,7 +30,13 @@ public class Episodio {
 
     }
 
+    public Integer getTemporada() {
+        return temporada;
+    }
 
+    public void setTemporada(Integer temporada) {
+        this.temporada = temporada;
+    }
 
     public String getTitulo() {
         return titulo;
@@ -68,11 +73,12 @@ public class Episodio {
     @Override
     public String toString() {
         return
-                "temporada=" + temporada +
-                //", numero=" + numero +
-                ", titulo='" + titulo + '\'' +
-                ", numeroEpisodio=" + numeroEpisodio +
-                ", evaluacion=" + evaluacion +
-                ", fechaDeLanzamiento=" + fechaDeLanzamiento;
+                "Episodio{" +
+                        "temporada=" + temporada +
+                        ", titulo='" + titulo + '\'' +
+                        ", numeroEpisodio=" + numeroEpisodio +
+                        ", evaluacion=" + evaluacion +
+                        ", fechaDeLanzamiento=" + fechaDeLanzamiento +
+                        '}';
     }
 }
