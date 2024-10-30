@@ -47,6 +47,7 @@ public class Principal {
         }
         // Mejoría usando funciones Lambda
         temporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(e.titulo())));
+        System.out.println("**************************************");
 
         //Convertir todas las informaciones en DatosEpisodio
 
@@ -61,6 +62,7 @@ public class Principal {
                 .sorted(Comparator.comparing(DatosEpisodio::evaluacion).reversed())
                 .limit(5)
                 .forEach(System.out::println);
+        System.out.println("**************************************");
 
         //Convirtiendo los Datos en una lista de tipo Episodio
 
@@ -70,6 +72,7 @@ public class Principal {
                 .collect(Collectors.toList());
 
         episodios.forEach(System.out::println);
+        System.out.println("**************************************");
 
 
     }
