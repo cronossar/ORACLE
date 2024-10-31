@@ -10,10 +10,7 @@ import com.aluracursos.screenmatch.service.ConvierteDatos;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -49,12 +46,12 @@ public class Principal {
         System.out.println("**************************************");
 
         //Mostrar solo el titulo de los episodios para las temporadas
-        /*for (int i = 0; i < datos.totalTemporadas(); i++) {
+        for (int i = 0; i < datos.totalTemporadas(); i++) {
             List<DatosEpisodio> episodiosTemporadas = temporadas.get(i).episodios();
             for (int j = 0; j < episodiosTemporadas.size(); j++) {
                 System.out.println(episodiosTemporadas.get(j).titulo());
             }
-        }*/
+        }
         // Mejoría usando funciones Lambda
         temporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(e.titulo())));
         System.out.println("**************************************");
@@ -65,13 +62,20 @@ public class Principal {
                 .flatMap(t -> t.episodios().stream())
                 .collect(Collectors.toList());
 
+
         //Top 5 episodios
         System.out.println("Top 5 Episodios");
         datosEpisodios.stream()
                 .filter(e -> !e.evaluacion().equalsIgnoreCase("N/A"))
+                //.peek(e -> System.out.println("Primer Filtro N/A" + e) )
                 .sorted(Comparator.comparing(DatosEpisodio::evaluacion).reversed())
+                //.peek(e -> System.out.println("Segundo Filtro Ordenacion M>M" + e) )
+                //.map(e -> e.titulo().toUpperCase())
+                //.peek(e -> System.out.println("Tercer Filtro Mayusculas (m/M)" + e) )
                 .limit(5)
                 .forEach(System.out::println);
+
+
         System.out.println("**************************************");
 
         //Convirtiendo los Datos en una lista de tipo Episodio
@@ -86,9 +90,11 @@ public class Principal {
                 .collect(Collectors.toList());
 
         episodios.forEach(System.out::println);
+
         System.out.println("**************************************");
 
         //Busqueda/Filtrar episodios por año (fechas)
+
         System.out.println("Indicanos el año que te interesa busquemos el episodio");
         var fecha = teclado.nextInt();
         teclado.nextLine();
@@ -105,6 +111,21 @@ public class Principal {
                                 " Fecha de Lanzamiento " + e.getFechaDeLanzamiento().format(dtf)
 
                  ));
+
+        System.out.println("**************************************");
+
+        //Busqueda en la coleccion por el titulo
+        System.out.println("Escribe alguna palabra que forme parte del titulo del episodio a buscar");
+        var pedazoTitulo = teclado.nextLine();
+        Optional<Episodio> episodioBuscado = episodios.stream()
+                .filter(e -> e.getTitulo().toUpperCase().contains(pedazoTitulo.toUpperCase()))
+                .findFirst();
+        if (episodioBuscado.isPresent()){
+            System.out.println(" Episodio encontrado ");
+            System.out.println(" Los datos son: " + episodioBuscado.get());
+        }else{
+            System.out.println(" Episodio no encontrado ");
+        }
 
 
     }
