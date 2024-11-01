@@ -115,7 +115,7 @@ public class Principal {
         System.out.println("**************************************");
 
         //Busqueda en la coleccion por el titulo
-        System.out.println("Escribe alguna palabra que forme parte del titulo del episodio a buscar");
+        /*System.out.println("Escribe alguna palabra que forme parte del titulo del episodio a buscar");
         var pedazoTitulo = teclado.nextLine();
         Optional<Episodio> episodioBuscado = episodios.stream()
                 .filter(e -> e.getTitulo().toUpperCase().contains(pedazoTitulo.toUpperCase()))
@@ -125,8 +125,14 @@ public class Principal {
             System.out.println(" Los datos son: " + episodioBuscado.get());
         }else{
             System.out.println(" Episodio no encontrado ");
-        }
+        }*/
 
+        //Crear Mapa de datos por temporada
+        Map<Integer, Double> evaluacionesPorTemporada = episodios.stream()
+                .collect(Collectors.groupingBy(Episodio::getTemporada,
+                        Collectors.averagingDouble(Episodio::getEvaluacion)));
+        System.out.println("Evaluaciones por temporada");
+        System.out.println(evaluacionesPorTemporada);
 
     }
 }
