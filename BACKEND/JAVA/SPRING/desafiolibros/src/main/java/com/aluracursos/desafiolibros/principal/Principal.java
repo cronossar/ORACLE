@@ -1,13 +1,16 @@
 package com.aluracursos.desafiolibros.principal;
 
+import ch.qos.logback.core.encoder.JsonEscapeUtil;
 import com.aluracursos.desafiolibros.model.Datos;
 import com.aluracursos.desafiolibros.model.DatosLibros;
 import com.aluracursos.desafiolibros.service.ConsumoAPI;
 import com.aluracursos.desafiolibros.service.ConvierteDatos;
 
 import java.util.Comparator;
+import java.util.DoubleSummaryStatistics;
 import java.util.Optional;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Principal {
 
@@ -49,6 +52,14 @@ public class Principal {
                         }
         System.out.println("************************");
 
+        //Trabajando con Estadísticas
+        DoubleSummaryStatistics est = datos.resultados().stream()
+                .filter(d -> d.numeroDeDescargas() >0 )
+                .collect(Collectors.summarizingDouble(DatosLibros::numeroDeDescargas));
+        System.out.println("Cantidad Media de descargas: " + est.getAverage());
+        System.out.println("Cantidad Máxima de descargas: " + est.getMax());
+        System.out.println("Cantidad Mínima de descargas: " + est.getMin());
 
+        System.out.println("************************");
     }
 }
