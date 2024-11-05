@@ -59,6 +59,7 @@ public class Principal {
         System.out.println("Cantidad Media de descargas: " + est.getAverage());
         System.out.println("Cantidad Máxima de descargas: " + est.getMax());
         System.out.println("Cantidad Mínima de descargas: " + est.getMin());
+        System.out.println("Cantidad de registros evaluados para calcular las estadísticas: " + est.getCount());
 
         System.out.println("************************");
     }
