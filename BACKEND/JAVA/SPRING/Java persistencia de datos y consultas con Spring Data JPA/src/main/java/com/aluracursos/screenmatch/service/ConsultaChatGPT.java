@@ -5,7 +5,9 @@ import com.theokanning.openai.service.OpenAiService;
 
 public class ConsultaChatGPT {
     public static String obtenerTraduccion(String texto) {
-        OpenAiService service = new OpenAiService("TU-APIKEY-OPENIA");
+        //Esta traduccion es llamada desde la Clase Serie
+
+       /* OpenAiService service = new OpenAiService("TU-APIKEY-OPENIA");
 
 
         CompletionRequest requisicion = CompletionRequest.builder()
@@ -17,6 +19,7 @@ public class ConsultaChatGPT {
 
 
         var respuesta = service.createCompletion(requisicion);
-        return respuesta.getChoices().get(0).getText();
+        return respuesta.getChoices().get(0).getText();*/
+        return "Funcionalidad traduccion desactivada";
     }
 }
