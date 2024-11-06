@@ -3,6 +3,7 @@ package com.aluracursos.screenmatch.principal;
 import com.aluracursos.screenmatch.model.DatosSerie;
 import com.aluracursos.screenmatch.model.DatosTemporadas;
 import com.aluracursos.screenmatch.model.Serie;
+import com.aluracursos.screenmatch.repository.SerieRepository;
 import com.aluracursos.screenmatch.service.ConsumoAPI;
 import com.aluracursos.screenmatch.service.ConvierteDatos;
 import java.util.ArrayList;
@@ -18,6 +19,13 @@ public class Principal {
     private final String API_KEY = "&apikey=fa0fa535";
     private ConvierteDatos conversor = new ConvierteDatos();
     private List<DatosSerie> datosSeries = new ArrayList<>();
+    //Agregar el constructor de Repository
+    private SerieRepository repositorio;
+
+    public Principal(SerieRepository repository){
+        this.repositorio = repository;
+
+    }
 
 
     public void muestraElMenu() {
@@ -75,15 +83,20 @@ public class Principal {
     }
     private void buscarSerieWeb() {
         DatosSerie datos = getDatosSerie();
-        datosSeries.add(datos);
+        //Modificacion para guardar en DB
+        Serie serie = new Serie(datos);
+        repositorio.save(serie);
+        //datosSeries.add(datos);
         System.out.println(datos);
     }
 
     private void mostrarSeriesBuscadas() {
-        List<Serie> series = new ArrayList<>();
+        //Modificacion para crear lista desde DB
+        List<Serie> series = repositorio.findAll();
+        /*List<Serie> series = new ArrayList<>();
         series = datosSeries.stream()
                 .map(d -> new Serie(d))
-                .collect(Collectors.toList());
+                .collect(Collectors.toList());*/
 
         series.stream()
                 .sorted(Comparator.comparing(Serie::getGenero))
