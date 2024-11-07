@@ -23,7 +23,8 @@ public class Serie {
     private Categoria genero;
     private String actores;
     private String sinopsis;
-    @Transient
+    //@Transient
+    @OneToMany(mappedBy = "serie")
     private List<Episodio> episodios;
 
     //Construccion creado manualmente para que tome la DB pq todas las entidades de JPA deben tener un constructor personalizado
